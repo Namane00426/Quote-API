@@ -1,6 +1,6 @@
 # Quote-API
 
-It's a small web app using Express.js web API to store and serve different quotes about computers, coding, and technology.
+It's a small web app using Express.js to store and serve different quotes about computers, coding, and technology.
 
 ## Table of Contents:
 
