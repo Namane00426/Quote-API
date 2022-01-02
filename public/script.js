@@ -5,6 +5,7 @@ const fetchByAuthorButton = document.getElementById('fetch-by-author');
 const quoteContainer = document.getElementById('quote-container');
 const quoteText = document.querySelector('.quote');
 const attributionText = document.querySelector('.attribution');
+const idText = document.querySelector('.quote-id');
 
 const resetQuotes = () => {
   quoteContainer.innerHTML = '';
@@ -23,7 +24,8 @@ const renderQuotes = (quotes = []) => {
       const newQuote = document.createElement('div');
       newQuote.className = 'single-quote';
       newQuote.innerHTML = `<div class="quote-text">${quote.quote}</div>
-      <div class="attribution">- ${quote.person}</div>`;
+      <div class="attribution">- ${quote.person}</div>
+      <div class="quote-id right">ID:${quote.id}</div>`
       quoteContainer.appendChild(newQuote);
     });
   } else {

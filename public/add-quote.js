@@ -12,10 +12,16 @@ submitButton.addEventListener('click', () => {
   .then(({quote}) => {
     const newQuote = document.createElement('div');
     newQuote.innerHTML = `
-    <h3>Congrats, your quote was added!</h3>
-    <div class="quote-text">${quote.quote}</div>
-    <div class="attribution">- ${quote.person}</div>
-    <p>Go to the <a href="index.html">home page</a> to request and view all quotes.</p>
+    <h3 class="center">Congrats, your quote was added!</h3>
+    <div class="container center">
+      <div class="left">
+        <div class="quote-text">${quote.quote}</div>
+        <div class="attribution">- ${quote.person}</div>
+      </div>
+      <div class="quote-id">ID:${quote.id}</div>
+    </div>
+    </div>
+    <p class="center">Go to the <a href="index.html">home page</a> to request<br>and view all quotes.</p>
     `
     newQuoteContainer.appendChild(newQuote);
   });

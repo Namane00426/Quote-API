@@ -45,22 +45,22 @@ const quotes = [
     person: 'Maurice Wilkes'
   },
   {
-    id: 010,
+    id: 10,
     quote: 'Learning to write programs stretches your mind, and helps you think better, creates a way of thinking about things that I think is helpful in all domains.',
     person: 'Bill Gates'
   },
   {
-    id: 011,
+    id: 11,
     quote: 'What one programmer can do in one month, two programmers can do in two months.',
     person: 'Fred Brooks'
   },
   {
-    id: 012,
+    id: 12,
     quote: 'The Internet? Is that thing still around?',
     person: 'Homer Simpson'
   },
   {
-    id: 013,
+    id: 13,
     quote: 'If you tell me precisely what it is a machine cannot do, then I can always make a machine which will do just that.',
     person: 'Jon von Neumann'
   },

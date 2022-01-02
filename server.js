@@ -29,9 +29,12 @@ app.get('/api/quotes', (req, res, next) => {
 
 app.post('/api/quotes', (req, res, next) => {
   if(req.query.quote && req.query.person) {
+    let newId = quotes.length + 1;
     quotes.push({
+      id: `${newId}`,
       quote: req.query.quote,
-      person: req.query.person})
+      person: req.query.person});
+      // console.log(quotes[quotes.length-1].id);
       res.send({
         quote: quotes[quotes.length-1]
       })
