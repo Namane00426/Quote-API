@@ -2,10 +2,8 @@ const fetchAllButton = document.getElementById('fetch-quotes');
 const fetchRandomButton = document.getElementById('fetch-random');
 const fetchByAuthorButton = document.getElementById('fetch-by-author');
 
+
 const quoteContainer = document.getElementById('quote-container');
-const quoteText = document.querySelector('.quote');
-const attributionText = document.querySelector('.attribution');
-const idText = document.querySelector('.quote-id');
 
 const resetQuotes = () => {
   quoteContainer.innerHTML = '';

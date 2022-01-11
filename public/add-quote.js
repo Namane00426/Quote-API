@@ -15,8 +15,8 @@ submitButton.addEventListener('click', () => {
     <h3 class="center">Congrats, your quote was added!</h3>
     <div class="container center">
       <div class="left">
-        <div class="quote-text">${quote.quote}</div>
-        <div class="attribution">- ${quote.person}</div>
+        <div class="quote-text"><h3>${quote.quote}</h3></div>
+        <div class="attribution"><p>- ${quote.person}</p></div>
       </div>
       <div class="quote-id">ID:${quote.id}</div>
     </div>
