@@ -18,7 +18,7 @@ const updateQuote =
    if(queryArguments.id) {
     queryArguments.id = Number(queryArguments.id);
    }
-   Object.assign(arr[qoteIndex], queryArguments);
+   Object.assign(arr[quoteIndex], queryArguments);
    return arr[quoteIndex];
   };
 

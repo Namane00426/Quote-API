@@ -13,27 +13,28 @@
     <a href="index.html">Home</a>
     <a href="add-quote.html">Add a New Quote</a>
   </nav>
-  <h2>Edit an existing Quote</h2>
-  <div>
-    <input id="quote-id" value="" placeholder="Input Id">
-    <button id="fetch-by-id">Search quote</button>
+  <h2>Search Quote by Id</h2>
+  <div class="request-buttons">
+    <input id="quote-id" value="">
+    <button id="fetch-by-id">Fetch by ID</button>
   </div>
 
-  <div id="fetched-quote-container">
+  <div id="quote-container">
 
   </div>
-
+  <h3 class="center">Update quote</h3>
   <div class="inputs">
-    <h3 class="center">Edit selected quote here</h3>
+    <label for="id">ID:</label>
+    <input id="id" value="">
     <label for="quote">text:</label>
     <input id="quote" value="">
-    <label for="person">person:</label>
+    <label for="person" >person:</label>
     <input id="person" value="">
   </div>
   <div>
-    <button id="submit-quote">Submit Changing</button>
+    <button id="submit-edit">Submit Changing</button>
   </div>
-  <div id="new-quote">
+<div id="newQuote">
     
   </div>
   <script src="edit-quote.js"></script>

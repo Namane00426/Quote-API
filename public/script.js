@@ -3,6 +3,7 @@ const fetchRandomButton = document.getElementById('fetch-random');
 const fetchByAuthorButton = document.getElementById('fetch-by-author');
 
 
+
 const quoteContainer = document.getElementById('quote-container');
 
 const resetQuotes = () => {
@@ -14,6 +15,7 @@ const renderError = response => {
 <p>Code: ${response.status}</p>
 <p>${response.statusText}</p>`;
 }
+
 
 const renderQuotes = (quotes = []) => {
   resetQuotes();
@@ -73,3 +75,4 @@ fetchByAuthorButton.addEventListener('click', () => {
     renderQuotes(response.quotes);
   });
 });
+
