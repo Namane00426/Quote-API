@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const app = express();
 
 const { quotes } = require('./data');
-const { getRandomElement, getIndexById, updateQuote } = require('./utils');
+const { getRandomElement, updateQuote } = require('./utils');
 
 const PORT = process.env.PORT || 4001;
 
@@ -55,20 +55,27 @@ app.post('/api/quotes', (req, res, next) => {
 
 //PUT edit particular quote
 app.put('/api/quotes/:id', (req, res, next) => {
-  const id = getIndexById(req.params.id, quotes);
-  const requestQuote = req.query.quote;
-  const requestPerson = req.query.person;
-  if(id !== -1){
-      updateQuote(
-        quotes[id], req.query, quotes
-        ).status(201).send({
-        quote: quotes[id]
-      })
-    } else {
-      res.status(404).send('request was invalid')
-    }
-}
-)
+  const editIndex = req.params.id;
+  const queryArguments = {
+    id:  editIndex,
+    quote: req.query.quote, 
+    person: req.query.person,
+  };
+  const editId = editIndex - 1;
+  const updated =  updateQuote(editId, queryArguments, quotes);
+  
+  if (queryArguments) {
+    res.status(200).send(
+     {
+      quote: updated
+     } 
+    )
+  } else {
+    res.status(400).send("SOMETHING WENT WRONG in this PUT")
+  }
+});
+
+
 
 
 app.listen(PORT, () => {

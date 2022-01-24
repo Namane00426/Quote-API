@@ -11,19 +11,16 @@ const getIndexById = (id, elementList) => {
 
 const updateQuote = 
   (id, queryArguments, arr) => {
-   const quoteIndex = getIndexById(id, arr);
-   if(quoteIndex === -1) {
+   if(id < 0 || arr.length < id) {
      throw new Error('invalid parameter')
-   }
-   if(queryArguments.id) {
-    queryArguments.id = Number(queryArguments.id);
-   }
-   Object.assign(arr[quoteIndex], queryArguments);
-   return arr[quoteIndex];
-  };
+   } else {
+   arr[id] = queryArguments;
+   return arr[id];
+  }
+}
 
 module.exports = {
   getRandomElement,
   getIndexById,
   updateQuote
-};
+}

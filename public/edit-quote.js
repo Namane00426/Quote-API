@@ -1,7 +1,9 @@
-const submitButton = document.getElementById('submit-edit');
-const newQuoteContainer = document.getElementById('new-quote');
 const fetchByIdButton = document.getElementById('fetch-by-id');
+const newQuoteContainer = document.getElementById('new-quote');
 const quoteContainer = document.getElementById('quote-container');
+
+const submitButton = document.getElementById('submit-edit');
+const updateQuoteContainer = document.getElementById('updateQuote-container');
 
 const resetQuotes = () => {
   quoteContainer.innerHTML = '';
@@ -53,7 +55,15 @@ submitButton.addEventListener('click', () => {
     method: 'PUT',
   })
   .then(response => response.json())
-  .then(response => {
-    renderQuotes(response.quotes);
+  .then(({quote}) => {
+    const updateQuote = document.createElement('div');
+    updateQuote.className = 'single-quote';
+    updateQuote.innerHTML = `<h3>ID:${id} is updated!</h3>
+    <div class="quote-text">${quote.quote}</div>
+    <div class="attribution">- ${quote.person}</div>
+    <div class="quote-id right">ID:${quote.id}</div>
+    <p class="center">Go to the <a href="index.html">home page</a> to request<br>and view all quotes.</p>`
+
+    updateQuoteContainer.appendChild(updateQuote);
   });
 });
