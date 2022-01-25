@@ -23,13 +23,13 @@ const renderQuotes = (quotes = []) => {
     quotes.forEach(quote => {
       const newQuote = document.createElement('div');
       newQuote.className = 'single-quote';
-      newQuote.innerHTML = `<div class="quote-text">${quote.quote}</div>
-      <div class="attribution">- ${quote.person}</div>
+      newQuote.innerHTML = `<div class="quote-text center">${quote.quote}</div>
+      <div class="attribution center">- ${quote.person}</div>
       <div class="quote-id right">ID:${quote.id}</div>`
       quoteContainer.appendChild(newQuote);
     });
   } else {
-    quoteContainer.innerHTML = '<p>Your request returned no quotes.</p>';
+    quoteContainer.innerHTML = '<p class="center">Your request returned no quotes.</p>';
   }
 }
 
