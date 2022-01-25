@@ -21,16 +21,13 @@ This is my solution to a challenge project of Codecademy's full-stack engineer s
 
 About this API features
 
-- It has a GET **/api/quotes/random** route.
-  It will send back a random quote from the quotes data.
-- It has a GET **/api/quotes** route.
-  It will return all quotes from the data if the request has no query.
+- GET **/api/quotes/random** route will send back a random quote from the quotes data.
+- GET **/api/quotes** route will return all quotes from the data if the request has no query.
 
-  If there is a query string with a person attribute, the route will returns all quotes said by the same person.
+  - If there is a query string with a person attribute, the route will returns all quotes said by the same person.
 
-- It has a POST **/api/quotes** route.
-  This is for adding new quotes to the data.
-  It receives 2 properties(quote, person) and sends a 400 response if these properties doesn't exist.
+- POST **/api/quotes** route is for adding new quotes to the data.
+  - It receives 2 properties(quote, person) and sends a 400 response if these properties doesn't exist.
 
 ---
 

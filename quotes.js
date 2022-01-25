@@ -1,3 +1,7 @@
+const express = require('express');
+const { getRandomElement, updateQuote } = require('./utils');
+const quotesRouter = express.Router();
+
 const quotes = [
   {
     id: '1',
@@ -66,6 +70,70 @@ const quotes = [
   }
 ];
 
-module.exports = {
-  quotes
-};
+//GET random quote
+quotesRouter.get('/random', (req, res, next) => {
+  res.send({
+    quote: getRandomElement(quotes)
+  });
+})
+
+//Get all quotes or get quotes by author request or specific id
+quotesRouter.get('', (req, res, next) => {
+  if(!req.query.person && !req.query.id) {
+    res.status(200).send({quotes: quotes});
+  } else if (req.query.person) {
+    const foundArr = quotes.filter((quote) => quote.person === req.query.person)
+    res.status(200).send({
+     quotes: foundArr
+    });
+  } else {
+    const foundQuote = quotes.filter((quote) => quote.id === req.query.id)
+    res.status(200).send({
+      quotes: foundQuote
+    });
+  };
+})
+
+//POST new quote
+quotesRouter.post('', (req, res, next) => {
+  if(req.query.quote && req.query.person) {
+    let newId = quotes.length + 1
+    quotes.push({
+      id: newId.toString(),
+      quote: req.query.quote,
+      person: req.query.person
+    });
+
+      res.status(201).send({
+        quote: quotes[quotes.length-1]
+      });
+  } else {
+    res.status(400).send('fill new quote and person both');
+  };
+})
+
+//PUT edit particular quote
+quotesRouter.put('/:id', (req, res, next) => {
+  const editIndex = req.params.id;
+  const queryArguments = {
+    id:  editIndex,
+    quote: req.query.quote, 
+    person: req.query.person,
+  };
+  const editId = editIndex - 1;
+  const updated =  updateQuote(editId, queryArguments, quotes);
+  
+  if (queryArguments && editId >= 0 && editId <= quotes.length) {
+    res.status(200).send(
+     {
+      quote: updated
+     } 
+    );
+  } else {
+    res.status(400).send("Parameter is invalid.");
+  };
+});
+
+module.exports =
+  quotesRouter;
+
