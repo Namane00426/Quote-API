@@ -25,9 +25,12 @@ About this API features
 - GET **/api/quotes** route will return all quotes from the data if the request has no query.
 
   - If there is a query string with a person attribute, the route will returns all quotes said by the same person.
+  - If there is a query string with an Id, the route will return a quote with that Id.
 
 - POST **/api/quotes** route is for adding new quotes to the data.
-  - It receives 2 properties(quote, person) and sends a 400 response if these properties doesn't exist.
+  - It receives two properties (quote, person) and sends a 400 response if these properties are not exist.
+- PUT **/api/quotes** route is for updating old quotes to the new.
+  - It receives an Id, name and quote as properties and update a particular quote by this Id. It sends a 400 response if the Id doesn't exist.
 
 ---
 
