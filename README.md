@@ -5,7 +5,7 @@ It's a small web app using Express.js to store and serve different quotes about 
 ## Table of Contents:
 
 - [General_Info](#general-information)
-- [Project_images](#project images)
+- [Project_images](#project-images)
 - [Technologies](#technologies)
 - [Using_the_App](#using-the-app)
 
@@ -36,11 +36,11 @@ About this API features
 
 ### Project images
 
-GET route, POST route:
-![GET route, POST route](https://user-images.githubusercontent.com/64364271/151435417-13b8f01c-9055-4afa-96b3-d15713c95117.gif)
+- GET route, POST route:
+  ![GET route, POST route](https://user-images.githubusercontent.com/64364271/151435417-13b8f01c-9055-4afa-96b3-d15713c95117.gif)
 
-PUT route:
-![PUT route](https://user-images.githubusercontent.com/64364271/151435752-a78f70ff-0ba2-43a8-9450-51a7eaf09a2a.gif)
+- PUT route:
+  ![PUT route](https://user-images.githubusercontent.com/64364271/151435752-a78f70ff-0ba2-43a8-9450-51a7eaf09a2a.gif)
 
 ---
 
@@ -59,3 +59,5 @@ This API is builled by..
 ### Using the App
 
 This app can be used by cloning the project onto your computer, navigating to the project root via the command line, and running **node server.js**.
+
+### Last line
