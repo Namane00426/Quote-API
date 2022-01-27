@@ -5,7 +5,7 @@ It's a small web app using Express.js to store and serve different quotes about 
 ## Table of Contents:
 
 - [General_Info](#general-information)
-- [Project_Link](#project-link)
+- [Project_images](#project images)
 - [Technologies](#technologies)
 - [Using_the_App](#using-the-app)
 
